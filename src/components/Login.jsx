@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export class Login extends Component {
     render() {
         return (
-            <div>
+            <div> <br /><br /><br /><br />
               <div class="container" >
                   <div class="jumbotron col-lg-4 offset-lg-4">
                       <h3 class="text-center">
@@ -23,6 +23,8 @@ export class Login extends Component {
   <button type="submit" class="btn btn-primary btn-block">Login</button>
  
  <br />
+ Create your account! <Link to="/Register">Register</Link>
+<br />
   Forget Password <Link to="/forget">Click Here</Link>
 </form>
 
