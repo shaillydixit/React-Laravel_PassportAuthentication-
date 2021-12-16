@@ -8,7 +8,6 @@ import Nav from './common/Nav';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nav />
     <Header />
   </React.StrictMode>,
   document.getElementById('root')

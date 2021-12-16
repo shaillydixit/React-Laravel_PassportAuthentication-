@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
 export class Nav extends Component {
     render() {
@@ -13,19 +14,19 @@ export class Nav extends Component {
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+          <Link class="nav-link active" aria-current="page" to="/profile">Profile</Link>
         </li>
       </ul>
       <span class="navbar-text">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Login</a>
+          <Link class="nav-link active" aria-current="page" to="/login">Login</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Register</a>
+          <Link class="nav-link active" aria-current="page" to="/register">Register</Link>
         </li>
       </ul>
 </span>
