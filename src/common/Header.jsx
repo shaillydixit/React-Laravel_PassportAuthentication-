@@ -6,15 +6,36 @@ import Nav from './Nav';
 import Login from '../components/Login';
 import Register from '../components/Register';
 import Forget from '../components/Forget_password';
-export class Header extends Component {
+import axios from 'axios';
+
+class Header extends Component {
+    state={
+        user:{}
+    }
+    componentDidMount(){
+        axios.get('/user')
+        .then((response) => {
+            this.setUser(response.data)
+
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
+    }
+
+    setUser = (user) => {
+        this.setState({user:user})
+    }
+
     render() {
         return (
     <Router> 
             <div>
-            <Nav/>
+            <Nav user={this.state.user} setUser={this.setUser}/>
       <Routes>
       <Route path="/" element={ <Home/> } />
-      <Route path="/profile" element={ <Profile/> } />
+      <Route path="/profile" element={()=> <Profile user={this.state.user}/> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/register" element={ <Register/> } />
       <Route path="/forget" element={ <Forget/> } />
